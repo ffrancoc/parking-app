@@ -1,0 +1,27 @@
+<div class="w-full relative flex flex-col justify-center items-center bg-blue-700">
+    <nav class="container flex justify-between items-center text-white">
+        <label class="ps-4 text-lg font-bold">Parking App</label>
+        <ul>
+            <li class="h-full flex items-center gap-2">
+                <a class="hidden text-md hover:bg-blue-600 sm:block p-4" href="#">Inicio</a>
+                <a class="hidden text-md hover:bg-blue-600 sm:block p-4" href="/login">Ingresar</a>
+                <a class="hidden text-md hover:bg-blue-600 sm:block p-4" href="#">Salir</a>
+                <button id="btnMenu" class="block p-4 text-md hover:bg-blue-600 sm:hidden">Menu</button>
+            </li>
+        </ul>
+    </nav>
+    <div id="mobileMenu" class="absolute -top-96 container text-white bg-blue-700">
+        <ul>
+            <li class="flex flex-col gap-2">
+                <button id="btnCloseMenu" class="pt-2 pe-2 text-md flex justify-end" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"  stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <a class="p-4 text-md hover:bg-blue-600" href="#">Inicio</a>
+                <a class="p-4 text-md hover:bg-blue-600" href="/login">Ingresar</a>
+                <a class="p-4 text-md hover:bg-blue-600" href="#">Salir</a>
+            </li>
+        </ul>
+    </div>
+</div>

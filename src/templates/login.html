@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Parking App | Login {% endblock%}
+
+{% block content %}
+    <div class="w-full h-full flex justify-center items-center">
+        <div class="flex flex-col rounded-md shadow-lg bg-white p-4">
+            <form class="flex flex-col gap-3" action="/login" method="post">
+                <div class="flex flex-col gap-2">
+                    <label class="font-bold text-md" for="username">usuario</label>
+                    <input class="p-2 bg-blue-50" type="text" name="username" id="username" required>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-bold text-md" for="password">Contraseña</label>
+                    <input class="p-2 bg-blue-50" type="password" name="password" id="password" required>
+                </div>
+                <div>
+                    <button class="w-full p-2 bg-blue-700 hover:bg-blue-600 text-white" type="submit">Login</button>
+                    {% if error %}
+                        <p class="mt-2 p-2 bg-red-100 text-red-500 text-center">{{error}}</p>
+                    {% endif %}
+                    {%if user %}
+                        <p>{{user['data']['username']}}</p>
+                    {%endif%}
+                </div>
+            </form>
+        </div>
+    </div>    
+{% endblock %}
+{% block custom_script %}
+
+{% endblock %}

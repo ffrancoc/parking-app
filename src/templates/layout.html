@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/public/css/output.css">
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div class="w-screen h-screen flex flex-col items-center bg-gray-100">
+        {% include "partials/navbar.html" %}
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {                
+        const btnMenu = document.getElementById('btnMenu');
+        const btnCloseMenu = document.getElementById('btnCloseMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function open_mobile_menu(open) {
+            if (open){
+                mobileMenu.style.top = 0;
+                mobileMenu.style.display = 'block';
+            }else{
+                mobileMenu.style.top = -384;
+                mobileMenu.style.display = 'none';
+            }
+        }
+
+        addEventListener('resize', (e) => {
+            const width = e.target.window.innerWidth;
+            if(width >= 640){
+                open_mobile_menu(open=false);                
+            }
+        });
+
+        btnCloseMenu.addEventListener('click', () => {
+            open_mobile_menu(open=false);
+        });
+        
+        btnMenu.addEventListener('click', () => {
+            if (mobileMenu.style.display === '' || mobileMenu.style.display === 'none'){
+                open_mobile_menu(open=true);
+            }else{
+                open_mobile_menu(open=false);
+            }
+        });
+    });
+</script>
+{% block custom_script %}{% endblock custom_script %}
+</html>

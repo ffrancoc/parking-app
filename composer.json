@@ -1,0 +1,23 @@
+{
+    "name": "ffrancoc/parking-app",
+    "description": "Aplicación Web",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Controllers\\": "src/Controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Francisco",
+            "email": "jose2fcurin@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^4.14",
+        "slim/psr7": "^1.7",
+        "slim/twig-view": "^3.4"
+    }
+}
